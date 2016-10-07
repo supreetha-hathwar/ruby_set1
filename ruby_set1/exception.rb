@@ -6,17 +6,17 @@
 
 # f = File.open("testfile.txt")
 begin
-  # .. process
+  raise 'A file Exception'
+
   f=File.open("testfile.txt","r")
   if f
-  c=f.sysread(5)
-  puts c
+    c=f.sysread(5)
+    puts c
   end
-rescue
-  # .. handle error
-  puts 'file opened for read'
-else
-  puts "Congratulations-- no errors!"
-ensure
-  f.close unless f.nil?
+
+
+rescue Exception => e
+  # handle error
+  puts e.message
+
 end

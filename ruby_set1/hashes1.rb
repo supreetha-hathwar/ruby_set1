@@ -5,15 +5,14 @@
 
 
 
-class Mobiles
+class Mobile
 
-  def initialize(list)
-  @list=list
-  end
+  def initialize
+    brand=gets.chomp
+  # @brand=brand
 
-end
-
-mobiles = {
+mobiles=Hash.new
+  mobiles = {
   "samsung"=> 10000,
   "motorola" => 15000,
   "apple"=> 60000,
@@ -25,17 +24,23 @@ mobiles = {
   "Lenovo"=>9000,
   "HTC"=>10500
 }
-mobiles.each{|key,val| puts val}
-brand = ''
-rate = Mobile.new(brand)
 
-if mobiles.include?(brand)
-then mobile=mobiles[brand]
-puts '#{brand}'
-else
-puts 'not found'
+# rate = Mobile.new(brand)
+
+# if mobiles.include?(brand)
+#  mobile=mobiles[brand]
+# puts '#{brand}'
+# else
+# puts 'not found'
+# end
+
+puts "#{mobiles[brand]}"
+end 
 end
 
+
+# brand=gets.chomp
+mob=Mobile.new
 
 
 
