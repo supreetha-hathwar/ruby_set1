@@ -7,7 +7,7 @@
 # Fix the below code such that .
 # 1. When asked for firstName it should give their son's name.
 # 2. When asked for secondName it should only give the mothers name.
-# 3. when asked for lastName it should only give the mothers name.
+# 3. when asked for lastName it should only give the fathers name.
 # 4. when asked for fullName it should give 'Bruce Martha Thomas'.
 
 
@@ -30,52 +30,105 @@
 #                        Thomas
 
 
-Class Father  
-  def initialize  
-    puts 'I am the Father.'  
-  end  
+# class Father 
+#   def initialize  
+#     puts 'I am the Father'  
+#   end  
   
-  # define fatherName --> father name is 'Thomas' . 
-end  
+# #   # define fatherName --> father name is 'Thomas' .
+ 
+
+# end 
 
 
-Class Mother  
-  def initialize  
-    puts 'I am the Mother.'  
-  end
+# class Mother  
+#   # def initialize  
+#   #   puts 'I am the Mother.'  
+#   # end
 
-  # define motherName -> mother's name is Martha
+#   # define motherName -> mother's name is Martha
+ 
 
-end  
+# end  
 
 # Class Son inherits his last name from his Father  
-Class Son < Father 
-  def firstName  
-    puts "My name is Bruce"  
-  end
+# class Son < Father 
+#   def firstName  
+#     puts "firstname -> Bruce"  
+#   end
 
-  # define lastName --> last name should be father's name
+#   # define lastName --> last name should be father's name
+#   def LastName
+#     puts 'last name ->Thomas'
+#   end
 
-  def fullName
-    # Print 'My name is Bruce Martha Thomas'
-    Print firstName motherName fatherName 
-  end
-end
+#   def fullName
+#     # Print 'My name is Bruce Martha Thomas'
+#     puts '#{'
+#   end
+# end
 
 
 # Class Son is sub-Class of Mother   
-Class Son < Mother
-  def firstName  
-    puts 'My name is Bruce Wayne'  
-  end 
+# class Son < Mother
+#   def firstName  
+#     puts 'My name is Bruce'  
+#   end 
 
-  # define secondName --> second name should be Mother's name
+#   # define secondName --> second name should be Mother's name
+#   def secondName
+#     puts 'Martha'
+#   end
 
-  def fullName
-    # Print 'My name is Bruce Martha Thomas'
-    puts firstName secondName lastName
+#   def fullName
+#     # Print 'My name is Bruce Martha Thomas'
+#     puts '#{fatherName}'
+#   end
+# end
+class Parent
+  def fatherName
+    puts 'Thomas'
+  end
+
+
+  def motherName
+    puts 'Martha'
+  end
+
+end
+
+class Son<Parent
+
+  def firstName
+    puts 'firstname->Bruce'
+  end
+
+
+  def secondName
+    # motherName
+    puts 'secondName->Martha'
+    
+  end
+
+  def lastName
+    # fatherName
+    puts 'lastName->Thomas'
+  end
+
+  def fullName(name)
+    puts "fullName->" "#{name}"
+
+
   end
 end
 
 # instantiate an object and print his firstName, secondName, lastName fullName.
+
+# s=Son.new
+s=Son.new
+s.firstName
+s.secondName
+s.lastName
+s.fullName("Bruce Martha Thomas")
+
 
