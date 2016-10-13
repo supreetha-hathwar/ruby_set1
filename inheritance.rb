@@ -87,12 +87,12 @@
 # end
 class Parent
   def fatherName
-    puts 'Thomas'
+    return 'Thomas'
   end
 
 
   def motherName
-    puts 'Martha'
+    return 'Martha'
   end
 
 end
@@ -100,35 +100,35 @@ end
 class Son<Parent
 
   def firstName
-    puts 'firstname->Bruce'
+    return 'Bruce'
   end
 
 
   def secondName
     # motherName
-    puts 'secondName->Martha'
-    
+    # puts 'secondName->Martha'
+     motherName
   end
 
   def lastName
     # fatherName
-    puts 'lastName->Thomas'
+    # puts 'lastName->Thomas'
+     fatherName
   end
 
-  def fullName(name)
-    puts "fullName->" "#{name}"
-
-
-  end
+  def fullName
+    # puts "fullName->" "#{name}"
+    puts  "full name->" "#{firstName}" "#{secondName}" "#{lastName}"
+    
+ end
 end
 
 # instantiate an object and print his firstName, secondName, lastName fullName.
 
-# s=Son.new
 s=Son.new
-s.firstName
-s.secondName
-s.lastName
-s.fullName("Bruce Martha Thomas")
+puts "firstname->" "#{s.firstName}"
+puts "secondname->" "#{s.secondName}"
+puts "lastname->" "#{s.lastName}"
+s.fullName
 
 
